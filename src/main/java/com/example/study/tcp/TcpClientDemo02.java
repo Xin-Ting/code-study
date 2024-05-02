@@ -27,7 +27,7 @@ public class TcpClientDemo02 {
         int len2;
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         // 将读取的内容写入缓冲区
-        if ((len2 = inputStream.read(buffer2)) != -1) {
+        while ((len2 = inputStream.read(buffer2)) != -1) {
             // 将缓冲区的内容输出
             baos.write(buffer2,0,len2);
         }

@@ -20,7 +20,7 @@ public class TcpServerDemo02 {
         FileOutputStream fos = new FileOutputStream("ceShiTcp.md");
         byte[] buffer = new byte[1024];
         int len;
-        if ((len = is.read(buffer)) != -1) {
+        while ((len = is.read(buffer)) != -1) {
             fos.write(buffer,0,len);
         }
 
