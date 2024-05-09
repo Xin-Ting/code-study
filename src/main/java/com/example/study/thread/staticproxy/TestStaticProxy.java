@@ -1,4 +1,4 @@
-package com.example.study.thread.StaticProxy;
+package com.example.study.thread.staticproxy;
 
 /**
  * 静态代理模式总结：
