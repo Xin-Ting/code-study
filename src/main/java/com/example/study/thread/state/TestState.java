@@ -1,4 +1,4 @@
-package com.example.study.thread;
+package com.example.study.thread.state;
 
 /**
  * 观测线程状态

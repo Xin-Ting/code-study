@@ -1,4 +1,4 @@
-package com.example.study.thread;
+package com.example.study.thread.state;
 
 public class TestJoin implements Runnable{
     @Override

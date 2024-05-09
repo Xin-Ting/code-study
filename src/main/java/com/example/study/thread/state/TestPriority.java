@@ -1,4 +1,4 @@
-package com.example.study.thread;
+package com.example.study.thread.state;
 
 public class TestPriority implements Runnable {
     public static void main(String[] args) throws InterruptedException {

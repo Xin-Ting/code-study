@@ -1,4 +1,4 @@
-package com.example.study.thread;
+package com.example.study.thread.state;
 
 import java.time.LocalDateTime;
 import java.util.Date;

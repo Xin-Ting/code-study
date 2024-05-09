@@ -1,4 +1,6 @@
-package com.example.study.thread;
+package com.example.study.thread.state;
+
+import com.example.study.thread.TestThreadDemo04;
 
 /**
  * 模拟网络延时：放大问题的发生性
