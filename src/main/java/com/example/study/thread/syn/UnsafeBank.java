@@ -48,27 +48,30 @@ class Drawing extends Thread {
 
     @Override
     public void run() {
-        // 判断账户余额是否充足
-        if (account.money - drawingMoney < 0) {
-            System.out.println(account.name + "钱不够了");
-            return;
-        }
+        // 锁同一个对象，如果这里是this，则对象不一样，因为是通过new对象，每次对象不同，这里改成string也行
+        synchronized (account) {
+            // 判断账户余额是否充足
+            if (account.money - drawingMoney < 0) {
+                System.out.println(account.name + "钱不够了");
+                return;
+            }
 
-        try {
-            // 放大问题的发生性
-            Thread.sleep(100);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+            try {
+                // 放大问题的发生性
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
 
-        // 取钱
-        account.money = account.money - drawingMoney;
-        System.out.println(this.getName() + "取了：" + drawingMoney);
-        // 手中现金
-        cash = cash + drawingMoney;
-        System.out.println(account.name + "账户余额：" + account.money);
+            // 取钱
+            account.money = account.money - drawingMoney;
+            System.out.println(this.getName() + "取了：" + drawingMoney);
+            // 手中现金
+            cash = cash + drawingMoney;
+            System.out.println(account.name + "账户余额：" + account.money);
 //        Thread.currentThread().getName() = this.getName()
-        System.out.println(this.getName() + "手中现金：" + cash);
+            System.out.println(this.getName() + "手中现金：" + cash);
+        }
 
     }
 }

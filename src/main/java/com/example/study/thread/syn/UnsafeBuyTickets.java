@@ -12,7 +12,7 @@ public class UnsafeBuyTickets implements Runnable {
 
     @Override
     public void run() {
-        while (true) {
+        while (flag) {
             if (ticketNums <= 0) {
                 flag = false;
                 return;
