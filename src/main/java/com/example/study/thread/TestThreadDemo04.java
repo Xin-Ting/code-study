@@ -25,9 +25,14 @@ public class TestThreadDemo04 implements Runnable {
 
     public static void main(String[] args) {
         TestThreadDemo04 testThreadDemo04 = new TestThreadDemo04();
-
+        // 操作的时同一个对象，所以会引起竞争问题
         new Thread(testThreadDemo04,"张三").start();
         new Thread(testThreadDemo04,"李四").start();
         new Thread(testThreadDemo04,"黄牛").start();
+
+        // 操作不同对象，不会产生线程安全问题
+//        new Thread(new TestThreadDemo04(),"张三").start();
+//        new Thread(new TestThreadDemo04(),"李四").start();
+//        new Thread(new TestThreadDemo04(),"黄牛").start();
     }
 }
