@@ -1,4 +1,4 @@
-package com.example.study.base.initalization;
+package com.example.study.base.list;
 
 import java.util.ArrayList;
 
