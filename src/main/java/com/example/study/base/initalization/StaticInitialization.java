@@ -18,7 +18,7 @@ package com.example.study.base.initalization;
  */
 public class StaticInitialization {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException {
         System.out.println("Creating new Cupboard() in main");
         new Cupboard();
         System.out.println("Creating new Cupboard() in main");

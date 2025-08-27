@@ -1,6 +1,8 @@
 package com.example.study.base.initalization;
 
-class Bowl {
+import java.io.Serializable;
+
+class Bowl implements Serializable {
         Bowl(int marker) {
             System.out.println("Bowl(" + marker + ")");
         }
