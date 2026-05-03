@@ -9,8 +9,9 @@ package com.example.study.base.datatype;
 public class BaseDataType {
     // 成员变量，存放在堆中
     int a = 10;
-    // 被 static 修饰的成员变量，JDK 1.7 及之前位于方法区，1.8 后存放于元空间，均不存放于堆中。
-    // 变量属于类，不属于对象。
+    // 被static修饰的成员变量,在JDK 1.7之前存放在方法区(HotSpot虚拟机永久代实现,永久代是独立于堆的内存区域),
+    // 在JDK 1.7之后,字符串常量池和静态变量迁入堆中
+    // 在JDK 1.8及之后,类的元数据移至元空间(本地内存),而static变量本身存储在堆中的Class对象相关区域。
     static int b = 20;
 
     public void method() {
@@ -18,5 +19,8 @@ public class BaseDataType {
         int c = 30;
 //        static int d = 40; // 编译错误，不能在方法中使用 static 修饰局部变量
     }
+
+    Integer e = 50;
+
 
 }
