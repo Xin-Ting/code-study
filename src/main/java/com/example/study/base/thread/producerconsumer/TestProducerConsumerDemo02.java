@@ -1,4 +1,4 @@
-package com.example.study.base.thread.comm;
+package com.example.study.base.thread.producerconsumer;
 
 public class TestProducerConsumerDemo02 {
     public static void main(String[] args) throws InterruptedException {
