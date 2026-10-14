@@ -1,4 +1,4 @@
-package com.example.study.base.thread.threadlocal;
+package com.example.study.base.thread;
 
 /**
  * Copyright (c) 2026 丁鑫.

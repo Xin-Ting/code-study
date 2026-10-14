@@ -1,6 +1,6 @@
-package com.example.study.base.thread;
+package com.example.study.base.thread.create;
 
-public class TestThreadDemo03 implements Runnable {
+public class UseImplRunnable implements Runnable {
     @Override
     public void run() {
         for (int i = 0; i < 100; i++) {
@@ -10,12 +10,12 @@ public class TestThreadDemo03 implements Runnable {
 
     public static void main(String[] args) {
         // 创建runnable接口的实现类对象
-        TestThreadDemo03 testThreadDemo03 = new TestThreadDemo03();
+        UseImplRunnable useImplRunnable = new UseImplRunnable();
         // 创建线程对象，通过线程对象来开启线程，代理
 //        Thread thread = new Thread(testThreadDemo03);
 //        thread.start();
 
-        new Thread(testThreadDemo03).start();
+        new Thread(useImplRunnable).start();
 
 
         for (int i = 0; i < 200; i++) {
