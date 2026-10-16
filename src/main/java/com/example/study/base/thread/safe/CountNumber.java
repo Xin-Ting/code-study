@@ -13,15 +13,23 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @description TODO
  */
 public class CountNumber {
-    private static int count1 = 0;
-    private static int count2 = 0;
+    private volatile int count1 = 0;
+    private volatile int count2 = 0;
 
     public void addCount() {
         count1++;
     }
 
+    public int getCount1() {
+        return count1;
+    }
+
     public synchronized void synchronizedAddCount() {
         count2++;
+    }
+
+    public int getCount2() {
+        return count2;
     }
 
     public static void main(String[] args) throws InterruptedException {
@@ -42,7 +50,7 @@ public class CountNumber {
         threadB.start();
         threadA.join();
         threadB.join();
-        System.out.println("count1:" + count1);
+        System.out.println("count1:" + countNumber1.getCount1());
 
         System.out.println("——————————");
 
@@ -63,7 +71,7 @@ public class CountNumber {
         threadD.start();
         threadC.join();
         threadD.join(); //让主线程等待工作线程执行结束，并保证能看到它们的写入结果，不然线程没执行完，主线程就打印结果了
-        System.out.println("count2:" + count2);
+        System.out.println("count2:" + countNumber2.getCount2());
 
 
         AtomicInteger count3 = new AtomicInteger(0);
